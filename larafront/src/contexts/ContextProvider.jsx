@@ -23,7 +23,7 @@ export const ContextProvider = ({children}) => {
     const [user, setUser] = useState({
         name:'Abun'
     })
-    const [token, _setToken] = useState(123)
+    const [token, _setToken] = useState(null)
 
     const setToken = (token) => {
         _setToken(token)

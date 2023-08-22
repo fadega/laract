@@ -15,18 +15,6 @@ const StateContext = createContext({
     // isContributor: false,
     // isSubscriber: false,
 
-    // isUserVerified: false,
-    // isUserUnverified: false,
-    // isUserApproved: false,
-    // isUserUnapproved: false,
-    // isUserActive: false,
-    // isUserInactive: false,
-    // isUserBanned: false,
-    // isUserUnbanned: false,
-    // isUserDeleted: false,
-    // isUserRestored: false,
-
-
 })
 
 

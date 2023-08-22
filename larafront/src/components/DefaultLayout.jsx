@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/jsx-uses-react, react/react-in-jsx-scope */
 import { Link, Outlet } from 'react-router-dom'
 import { useStateContext } from '../contexts/ContextProvider'
 import { Navigate } from 'react-router-dom'

@@ -10,6 +10,7 @@ const Signup = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmationRef = useRef()
+  const [errors, setErrors] = useState(null)
   const {setUser, setToken} = useStateContext()
   const onSubmit = (ev) => {
     ev.preventDefault()
@@ -30,7 +31,7 @@ const Signup = () => {
       .catch(err => {
         const response = err.response
         if (response && response.status === 422) {
-          console.log(response.data.errors)
+          setErrors(response.data.errors)
         }
       })
 
@@ -41,6 +42,15 @@ const Signup = () => {
       <div>
         <form action="" onSubmit={onSubmit}>
           <h1 className='title'>Signup </h1>
+          {errors && <div className="alert alert-danger">
+            <ul>
+              {Object.keys(errors).map((key, index) => (
+                <li key={index}>{errors[key][0]}</li>
+              ))}
+            </ul>
+          </div>          
+          }
+
           <input ref={nameRef} type="text" placeholder="Full Name" />
           <input ref={emailRef} type="email" placeholder="Email" />
           <input ref={passwordRef} type="password" placeholder="Password" />
